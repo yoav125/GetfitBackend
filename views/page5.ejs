@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GetFit - What's Your Age?</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f4;
+      flex-direction: column;
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background-image: url('/erasebg-transformed (24).png'); /* Replace with your image path */
+      background-size: cover;
+   background-position-y: 6%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4); /* Dark overlay for text visibility */
+    }
+
+    .content {
+      z-index: 1;
+      width: 100%;
+      margin-top: 100px; /* Move the content further down */
+      text-align: center;
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 4rem; /* Adjust font size for header */
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 2rem; /* Adjust font size */
+      margin-bottom: 30px;
+    }
+
+    /* Scrollable Picker Styling */
+    .scroll-container {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-top: 30px;
+    }
+
+    .picker {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      border-radius: 10px;
+      width: 100px;
+      overflow-y: scroll;
+      height: 100px;
+      max-height: 100px;
+    }
+
+    .picker select {
+      width: 100%;
+      background-color: transparent;
+      color: white;
+      border: none;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .picker option {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    /* Next Button */
+    .btn {
+      background-color: #1e90ff;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+      margin-top: 30px; /* Adjust margin to move button further down */
+    }
+
+    .btn:hover {
+      background-color: #4682b4;
+    }
+
+    /* Footer Links */
+    .footer-links {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Progress Bar */
+    .progress-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background-color: #ddd;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background-color: #1e90ff;
+      transition: width 0.25s ease;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .content h1 {
+        font-size: 3rem;
+      }
+
+      .content p {
+        font-size: 1.6rem;
+      }
+
+      .btn {
+        font-size: 1.1rem;
+        padding: 14px 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .content h1 {
+        font-size: 2.5rem;
+      }
+
+      .content p {
+        font-size: 1.4rem;
+      }
+
+      .btn {
+        font-size: 1rem;
+        padding: 12px 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-container">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>What's your age?</h1>
+      <p>Select your birth date</p>
+
+      <!-- Scrollable Pickers for Day, Month, and Year -->
+      <div class="scroll-container">
+        <div class="picker">
+          <select id="day">
+           <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+  <option>6</option>
+  <option>7</option>
+  <option>8</option>
+  <option>9</option>
+  <option>10</option>
+  <option>11</option>
+  <option>12</option>
+  <option>13</option>
+  <option>14</option>
+  <option>15</option>
+  <option>16</option>
+  <option>17</option>
+  <option>18</option>
+  <option>19</option>
+  <option>20</option>
+  <option>21</option>
+  <option>22</option>
+  <option>23</option>
+  <option>24</option>
+  <option>25</option>
+  <option>26</option>
+  <option>27</option>
+  <option>28</option>
+  <option>29</option>
+  <option>30</option>
+  <option>31</option>
+          </select>
+        </div>
+        <div class="picker">
+          <select id="month">
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+  <option>May</option>
+  <option>June</option>
+  <option>July</option>
+  <option>August</option>
+  <option>September</option>
+  <option>October</option>
+  <option>November</option>
+            <option>December</option>
+          </select>
+        </div>
+        <div class="picker">
+          <select id="year">
+  <option>2025</option>
+  <option>2024</option>
+  <option>2023</option>
+  <option>2022</option>
+  <option>2021</option>
+  <option>2020</option>
+  <option>2019</option>
+  <option>2018</option>
+  <option>2017</option>
+  <option>2016</option>
+  <option>2015</option>
+  <option>2014</option>
+  <option>2013</option>
+  <option>2012</option>
+  <option>2011</option>
+  <option>2010</option>
+  <option>2009</option>
+  <option>2008</option>
+  <option>2007</option>
+  <option>2006</option>
+  <option>2005</option>
+  <option>2004</option>
+  <option>2003</option>
+  <option>2002</option>
+  <option>2001</option>
+  <option>2000</option>
+  <option>1999</option>
+  <option>1998</option>
+  <option>1997</option>
+  <option>1996</option>
+  <option>1995</option>
+  <option>1994</option>
+  <option>1993</option>
+  <option>1992</option>
+  <option>1991</option>
+  <option>1990</option>
+  <option>1989</option>
+  <option>1988</option>
+  <option>1987</option>
+  <option>1986</option>
+  <option>1985</option>
+  <option>1984</option>
+  <option>1983</option>
+  <option>1982</option>
+  <option>1981</option>
+  <option>1980</option>
+  <option>1979</option>
+  <option>1978</option>
+  <option>1977</option>
+  <option>1976</option>
+  <option>1975</option>
+  <option>1974</option>
+  <option>1973</option>
+  <option>1972</option>
+  <option>1971</option>
+  <option>1970</option>
+  <option>1969</option>
+  <option>1968</option>
+  <option>1967</option>
+  <option>1966</option>
+  <option>1965</option>
+  <option>1964</option>
+  <option>1963</option>
+  <option>1962</option>
+  <option>1961</option>
+  <option>1960</option>
+  <option>1959</option>
+  <option>1958</option>
+  <option>1957</option>
+  <option>1956</option>
+  <option>1955</option>
+  <option>1954</option>
+  <option>1953</option>
+  <option>1952</option>
+  <option>1951</option>
+  <option>1950</option>
+  <option>1949</option>
+  <option>1948</option>
+  <option>1947</option>
+  <option>1946</option>
+  <option>1945</option>
+  <option>1944</option>
+  <option>1943</option>
+  <option>1942</option>
+  <option>1941</option>
+  <option>1940</option>
+  <option>1939</option>
+  <option>1938</option>
+  <option>1937</option>
+  <option>1936</option>
+  <option>1935</option>
+  <option>1934</option>
+  <option>1933</option>
+  <option>1932</option>
+  <option>1931</option>
+  <option>1930</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Next Button -->
+      <a href="/page20" class="btn">Next</a>
+    </div>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar"></div>
+  </div>
+
+  <script>
+    // Progress bar functionality
+    window.addEventListener("scroll", function() {
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var scrollPosition = window.scrollY;
+      var scrollPercentage = (scrollPosition / docHeight) * 100;
+      document.getElementById('progress-bar').style.width = scrollPercentage + "%";
+    });
+  </script>
+</body>
+</html>

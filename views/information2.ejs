@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Information - GetFit</title>
+  <style>
+       body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+    header {
+      background: linear-gradient(to right, #56ab2f, #a8e063);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+    .top-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .top-nav li {
+      display: inline;
+    }
+
+    .top-nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      transition: color 0.3s ease;
+    }
+
+    .top-nav a:hover {
+      color: #ffde59;
+    }
+
+    #container {
+      width: 90%;
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #56ab2f;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #333;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #666;
+      font-size: 1em;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    label {
+      color: #666;
+      font-size: 1em;
+      margin-bottom: 5px;
+      text-align: left;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
+
+    button,
+    .btn-checkout {
+      padding: 15px;
+      font-size: 1.1em;
+      cursor: pointer;
+      background-color: #56ab2f;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease-in-out;
+      margin-top: 10px;
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    button:hover,
+    .btn-checkout:hover {
+      background-color: #4a90e2;
+    }
+    footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-nav {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .footer-nav li {
+            display: inline;
+        }
+
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: #ffde59;
+        }
+        .footer-text {
+            font-size: 0.9em;
+            color: white;
+        }
+   
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">GetFit</div>
+    <nav class="top-nav">
+      <ul>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/sales">Home</a></li>
+        <li><a href="/information2">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="container">
+    <h1>User Information</h1>
+    <h2>Weight Loss Definitive Solution</h2>
+    <p>Your personalized plan for a healthier lifestyle.</p>
+    <p>Unlock the secrets to effective weight management!</p>
+    <form id="user-form" action="/saveInformation" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="weight">Weight (kg):</label>
+      <input type="number" id="weight" name="weight" required>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <label for="foodtype">Dietary Preference:</label>
+      <select id="foodtype" name="foodtype" required>
+        <option value="normal">Normal</option>
+        <option value="vegetarian">Vegetarian</option>
+        <option value="vegan">Vegan</option>
+      </select>
+      <label for="body">Additional Information:</label>
+      <textarea id="body" name="body" rows="4" placeholder="Enter any additional information here..." required></textarea>
+      <button type="submit" class="btn-checkout">Proceed to Checkout</button>
+    </form>
+  </div>
+
+  <footer>
+    <p class="footer-text">© 2024 GetFit. All rights reserved.</p>
+    <ul class="footer-nav">
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms of Service</a></li>
+    </ul>
+  </footer>
+
+
+<script>
+  document.querySelector('.btn-checkout').addEventListener('click', () => {
+    fetch('/checkout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        items: [
+          { id: 1, quantity: 2 },
+          // Add more items if needed
+        ],
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Redirect to the provided URL after checkout
+        console.log(data);
+        window.location.href = data.url;
+      })
+      .catch(error => console.error('Error:', error));
+  });
+</script>
+
+
+
+</body>
+</html>

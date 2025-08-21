@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GetFit Welcome</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+    }
+
+    .container {
+      background: url("/erasebg-transformed (23).png") no-repeat center top;
+      background-position-y: 13%;
+      background-size: cover;
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 30px 20px;
+      margin-bottom: 120px;
+    }
+
+    .overlay {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0);
+      inset: 0;
+      z-index: 0;
+    }
+
+    .content {
+      z-index: 1;
+      width: 100%;
+      margin-top: 100px; /* Increased margin to move the text further down */
+    }
+
+    .content h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .content p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      max-width: 350px;
+      padding: 16px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      margin: 10px auto;
+      cursor: pointer;
+    }
+
+    .btn.white {
+      background-color: white;
+      color: black;
+    }
+
+    .btn.blue {
+      background-color: #2ca6ff;
+      color: white;
+      margin-left: 20px; /* Move the blue button slightly to the right */
+    }
+
+    .footer {
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    @media (min-width: 768px) {
+      .content h1 {
+        font-size: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="overlay"></div>
+
+    <div class="content">
+      <h1>Transform Your Body</h1>
+      <p>Join thousands of people achieving real results</p>
+
+                <a href="/page4" class="btn">continue</a>
+    
+    </div>
+
+    <div class="footer">
+      <a href="/privacy">Privacy policy</a>
+      <a href="/terms">Terms and conditions</a>
+    </div>
+  </div>
+</body>
+</html>

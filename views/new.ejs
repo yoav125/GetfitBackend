@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitnessFuel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        header .logo {
+            font-size: 24px;
+        }
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        header nav ul li {
+            margin-left: 20px;
+        }
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        header nav ul li a:hover {
+            color: #f90;
+        }
+        header nav ul li a.cta {
+            background-color: #f90;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+        header nav ul li a.cta:hover {
+            background-color: #e68a00;
+        }
+        .hero {
+            background: url('your-hero-image.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            margin-top: 60px;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 36px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .hero p {
+            font-size: 18px;
+        }
+        .cta {
+            display: inline-block;
+            background-color: #f90;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .cta:hover {
+            background-color: #e68a00;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .benefits, .how-it-works, .testimonials, .plans, .blog {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+        .benefits:hover, .how-it-works:hover, .testimonials:hover, .plans:hover, .blog:hover {
+            transform: translateY(-5px);
+        }
+        .benefits h2, .how-it-works h2, .testimonials h2, .plans h2, .blog h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .testimonials .testimonial, .plans .plan {
+            margin: 20px 0;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: #f90;
+        }
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            header nav ul {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+            header nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">FitnessFuel</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#plans">Plans</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#login" class="cta">Login/Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Transform Your Health with Tailored Daily Meal Plans</h1>
+            <p>Personalized nutrition plans based on your unique needs</p>
+            <a href="#input-form" class="cta">Find Your Perfect Plan</a>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="about" class="benefits">
+        <div class="container">
+            <h2>Why Choose FitnessFuel?</h2>
+            <p>Personalization: Meal plans tailored to your dietary needs and fitness goals.</p>
+            <p>Variety: Diverse meal options to keep your diet exciting and balanced.</p>
+            <p>Support: Ongoing support and tips to help you stay on track.</p>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <p>1. Input Your Information: Fill out our easy questionnaire.</p>
+            <p>2. Receive Personalized Plan: Get daily meal plans tailored to your preferences and goals.</p>
+            <p>3. Enjoy Your Meals: Follow your plan and see results!</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial">

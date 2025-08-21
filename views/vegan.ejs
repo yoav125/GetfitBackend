@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegan Daily Menus - GetFit</title>
+    <style>
+        /* Basic CSS for styling the Vegan Daily Menus page */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            overflow-y: scroll; /* Enable vertical scroll */
+        }
+
+        header {
+            background: linear-gradient(to right, #56ab2f, #a8e063);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1.5em;
+            color: white;
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 5px 10px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-arrow:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .welcome-message {
+            font-size: 1.5em;
+            color: #56ab2f;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .day-button {
+            background-color: #56ab2f;
+            color: white;
+            font-size: 1.5em;
+            padding: 20px;
+            border: none;
+            border-radius: 20px; /* Rounded corners */
+            cursor: pointer;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            text-transform: uppercase;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* 3D shadow effect */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .day-button:hover {
+            background-color: #3e8e41;
+            transform: translateY(-3px); /* Hover lift effect */
+            box-shadow: 0 10px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .day-button {
+                width: 180px;
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .day-button {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+            margin-top: 30px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        footer ul li {
+            margin: 0 15px;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: #ffde59;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section with Logo and Back Arrow -->
+    <header>
+        <a href="/sales" class="back-arrow">&#8592;</a>
+        <div class="logo">GetFit</div>
+    </header>
+
+    <!-- Personalized Welcome Message -->
+    <div class="welcome-message">
+        Hello, <%= userName %>! Choose your daily vegan meals.
+    </div>
+
+    <!-- Day Selection Buttons -->
+    <div class="container">
+        <a href="/dayvegan1" class="day-button">Day 1</a>
+        <a href="/dayvegan2" class="day-button">Day 2</a>
+    </div>
+
+    <!-- Footer Section with Consistent Navigation -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 GetFit. All rights reserved.</p>
+            <ul class="footer-nav">
+                <li><a href="/about">About</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/terms">Terms of Service</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

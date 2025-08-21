@@ -1,0 +1,109 @@
+
+<!-- payment.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #3498db, #2c3e50); /* You can adjust the background colors */
+      color: #fff; /* Text color */
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    #container {
+      width: 60%;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #f39c12; /* Header text color */
+      font-size: 2.5em; /* Adjust the font size */
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    label {
+      color: #2c3e50; /* Label text color */
+      font-size: 1.2em; /* Adjust the font size */
+      margin-bottom: 10px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      border: 1px solid #bdc3c7; /* Border color */
+      border-radius: 4px;
+      background-color: #ecf0f1; /* Input background color */
+      color: #333; /* Input text color */
+      font-size: 1em; /* Adjust the font size */
+    }
+
+    button {
+      margin: 10px;
+      padding: 15px 30px;
+      font-size: 1.2em; /* Adjust the font size */
+      cursor: pointer;
+      background-color: #2ecc71; /* Button background color */
+      color: #fff; /* Button text color */
+      border: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #27ae60; /* Button background color on hover */
+    }
+
+    a {
+      color: #2c3e50; /* Link color */
+      font-size: 1em; /* Adjust the font size */
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+    }
+
+    a:hover {
+      color: #bdc3c7; /* Link color on hover */
+    }
+  </style>
+  <title>Payment</title>
+</head>
+<body>
+  <div id="container">
+    <h1>Payment</h1>
+    <form action="/choose" method="POST">
+      <label for="cardNumber">Card Number:</label>
+      <input type="text" id="cardNumber" name="cardNumber" required>
+
+      <label for="expiryDate">Expiry Date:</label>
+      <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" name="cvv" required>
+
+      <button type="submit">Continue</button>
+    </form>
+    <a href="/" class="arrow-link">&#8592; Back to Home</a>
+  </div>
+</body>
+</html>

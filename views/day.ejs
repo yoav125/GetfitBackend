@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day <%= dayNumber %> Meals</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      color: #333;
+    }
+
+    .meal-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .meal-card img {
+      width: 180px; /* smaller image */
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .meal-info {
+      flex: 1;
+      text-align: left;
+    }
+
+    .meal-info h3 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+
+    .meal-info ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .meal-info li {
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .meal-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .meal-card img {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .meal-info {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hello, <%= userName %>! Here are your meals for Day <%= dayNumber %></h1>
+
+    <% mealsWithQuantities.forEach(meal => { %>
+      <div class="meal-card">
+        <div class="meal-info">
+          <h3><%= meal.mealName %></h3>
+          <ul>
+            <% meal.ingredientQuantities.forEach(quantity => { %>
+              <li><%= quantity %></li>
+            <% }) %>
+          </ul>
+        </div>
+
+        <% if (meal.image) { %>
+          <img src="/photos/<%= meal.image %>" alt="Meal Image">
+        <% } %>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>

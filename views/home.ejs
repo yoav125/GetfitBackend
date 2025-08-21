@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8f8f8; /* Light gray background */
+      color: #333; /* Dark text color */
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    #container {
+      width: 60%;
+      margin: 50px auto;
+      padding: 40px;
+      background-color: #fff; /* White background */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #3498db; /* Blue header color */
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #27ae60; /* Green subheading color */
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #555; /* Dark gray text color */
+      font-size: 1.4em;
+      margin-bottom: 30px;
+    }
+
+    button {
+      margin: 20px;
+      padding: 18px 36px;
+      font-size: 1.4em;
+      cursor: pointer;
+      background-color: #e74c3c; /* Red button color */
+      color: #fff; /* White button text color */
+      border: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #c0392b; /* Darker red button color on hover */
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #3498db; /* Blue link color */
+      font-size: 16px;
+    }
+
+    a:hover {
+      color: #1f618d; /* Darker blue link color on hover */
+    }
+  </style>
+  <title>Welcome to Getfit</title>
+</head>
+<body>
+  <div id="container">
+    <h1>The Ultimate Fitness Solution</h1>
+    
+    <!-- Flashy and Short Text to Attract Attention -->
+    
+    <!-- Information Section -->
+    <%- include('information', { weight: weight || 0 }) %>
+    
+    <!-- Daily Menus Button -->
+    
+    <form action="/results" method="GET">
+      <!-- Include hidden input field to pass the weight to the results page -->
+      <button type="submit">Continue</button>
+   </form>
+    <!-- Include information.ejs content -->
+  </div>
+</body>
+</html>
+
+
+  
+
+

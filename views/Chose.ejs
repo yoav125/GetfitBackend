@@ -1,0 +1,83 @@
+<!-- choose.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #3498db, #2c3e50); /* You can adjust the background colors */
+      color: #fff; /* Text color */
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    #container {
+      width: 60%;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #f39c12; /* Header text color */
+      font-size: 2.5em; /* Adjust the font size */
+      margin-bottom: 20px;
+    }
+
+    .menu-buttons {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    button {
+      width: 200px;
+      height: 80px;
+      font-size: 1.5em;
+      cursor: pointer;
+      background-color: #e74c3c; /* Button background color */
+      color: #fff; /* Button text color */
+      border: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #c0392b; /* Button background color on hover */
+    }
+
+    a {
+      color: #2c3e50; /* Link color */
+      font-size: 1em; /* Adjust the font size */
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+    }
+
+    a:hover {
+      color: #bdc3c7; /* Link color on hover */
+    }
+  </style>
+  <title>Choose Menu Type</title>
+</head>
+<body>
+  <div id="container">
+    <h1>Choose Menu Type</h1>
+    <div class="menu-buttons">
+      <button onclick="location.href='/veganMenus'">Vegan</button>
+      <button onclick="location.href='/vegetarianMenus'">Vegetarian</button>
+      <button onclick="location.href='/normalMenus'">Normal</button>
+    </div>
+    <a href="/home" class="arrow-link">&#8592; Back to Home</a>
+  </div>
+</body>
+</html>
+

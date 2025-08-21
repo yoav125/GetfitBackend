@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Meal Plans - FitnessFuel</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+        header h1, footer p {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .hero {
+            background: url('/images/hero-banner.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .plan-details, #testimonials, #purchase {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .plan-details img, .testimonial img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .btn-primary, .btn-secondary {
+            background-color: #f90;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary:hover, .btn-secondary:hover {
+            background-color: #e68a00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>FitnessFuel Meal Plans</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/plans">Our Plans</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Get Fit With Personalized Daily Meal Plans</h2>
+                <p>Designed to meet your nutritional needs and fitness goals.</p>
+                <a href="#purchase" class="btn-primary">Order Your Plan Now</a>
+            </div>
+        </section>
+
+    
+
+        <section id="testimonials">
+            <h3>What Our Customers Say</h3>
+            <div class="testimonial">
+                <img src="/images/customer-jane.jpg" alt="Jane Doe">
+                <p>"The meal plans are fantastic and really tailored to my needs. Highly recommend!"</p>
+                <cite>- Jane Doe, Satisfied Customer</cite>
+            </div>
+            <div class="testimonial">
+                <img src="/images/customer-john.jpg" alt="John Smith">
+                <p>"I've seen great results with the diet plans provided. Great value for the money!"</p>
+                <cite>- John Smith, Happy Client</cite>
+            </div>
+        </section>
+
+        <section id="purchase">
+            <h3>Ready to Start?</h3>
+            <p>Purchase your personalized meal plan now and take the first step towards a healthier you.</p>
+            <form action="/purchase" method="post">
+                <input type="hidden" name="planId" value="<%= planId %>">
+                <button type="submit" class="btn-primary">Purchase Plan</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 FitnessFuel. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

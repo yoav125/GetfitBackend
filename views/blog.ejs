@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - GetFit</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #56ab2f, #a8e063);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 20px;
+        }
+
+        .blog-card-content h2 {
+            font-size: 1.5em;
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .blog-card-content p {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .blog-card-content a {
+            color: #56ab2f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .top-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .blog-card-content a:hover {
+            text-decoration: underline;
+        }
+        
+        .top-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-nav {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .footer-nav li {
+            display: inline;
+        }
+
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: #ffde59;
+        }
+        .footer-text {
+            font-size: 0.9em;
+            color: white;
+        }
+    </style>
+</head>
+<header>
+    
+    <div class="logo">GetFit</div>
+    <nav class="top-nav">
+        <ul>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/sales">Home</a></li>
+            <li><a href="/information2">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <div class="container">
+        <h1>Our Blog</h1>
+        <div class="blog-grid">
+            <!-- Blog 1 -->
+            <div class="blog-card">
+                <img src="DALL·E 2025-01-31 13.59.52 - 3hours.webp" alt="every 3 hours">
+                <div class="blog-card-content">
+                    <h2>the avantages of eating every three hours </h2>
+                    <p>Step-by-step how to make your day healtier.</p>
+                    <a href="ThreeHours">Read more</a>
+                </div>
+            </div>
+
+            <!-- Blog 2 -->
+            <div class="blog-card">
+                <img src="run-5077128_1280.jpg" alt="Morning Run">
+                <div class="blog-card-content">
+                    <h2>Benefits of a Morning Run</h2>
+                    <p>Explore how a simple morning jog can boost your health.</p>
+                    <a href="MorningRun">Read more</a>
+                </div>
+            </div>
+
+            <!-- Blog 3 -->
+            <div class="blog-card">
+                <img src="DALL·E 2025-01-31 13.45.52 - deliciousmeal.webp" alt="Smoothie Bowl">
+                <div class="blog-card-content">
+                    <h2>Top 5 Smoothie Bowls for Energy</h2>
+                    <p>Easy recipes for delicious and energizing smoothie bowls.</p>
+                    <a href="SmoothieBowls">Read more</a>
+                </div>
+            </div>
+
+            <!-- Blog 4 -->
+            <div class="blog-card">
+                <img src="close-up-kid-meditating-mat.jpg" alt="Yoga Session">
+                <div class="blog-card-content">
+                    <h2>Beginner's Guide to meditation</h2>
+                    <p>Learn how meditation can develope your concentration.</p>
+                    <a href="Meditation">Read more</a>
+                </div>
+            </div>
+
+            <!-- Blog 5 -->
+            <div class="blog-card">
+                <img src="DALL·E 2025-01-31 13.43.38 - fitnessmeal.webp" alt="Meal Prep">
+                <div class="blog-card-content">
+                    <h2>Easy Meal Prep Ideas for the Week</h2>
+                    <p>Save time and eat healthy with these simple meal prep tips.</p>
+                    <a href="MealPrep">Read more</a>
+                </div>
+            </div>
+
+            <!-- Blog 6 -->
+            <div class="blog-card">
+                <img src="weight-8246973_1280.jpg" alt="Dumbbell Workout">
+                <div class="blog-card-content">
+                    <h2>5 Dumbbell Exercises for Full-Body Strength</h2>
+                    <p>Get stronger with these effective dumbbell workouts.</p>
+                    <a href="Workout">Read more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="footer-text">© 2024 GetFit. All rights reserved.</p>
+        <ul class="footer-nav">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

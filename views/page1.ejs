@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetFit - Start Your Journey</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        /* Hero Section */
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-image: url('/erasebg-transformed (19).png');
+            background-size: cover;
+            background-position: center 0%; /* Move the background image downwards */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-attachment: fixed;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0); /* Dark overlay for text visibility */
+        }
+
+        .content {
+            position: relative;
+            text-align: center;
+            color: white;
+            max-width: 80%;
+            padding: 20px;
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 150px; /* Move the content further down */
+        }
+
+        h1 {
+            font-size: 6rem; /* Adjust font size for header */
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: 3rem; /* Adjust font size for text */
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .line-break {
+            display: block; /* Force this to be on a new line */
+        }
+
+        .btn {
+            background-color: #1e90ff;
+            color: white;
+            padding: 15px 30px;
+            font-size: 3rem;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #4682b4;
+        }
+
+        /* Responsive design */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 4rem;
+            }
+
+            p {
+                font-size: 2rem;
+            }
+
+            .btn {
+                font-size: 2rem;
+                padding: 12px 24px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1.6rem;
+            }
+
+            .btn {
+                font-size: 1.8rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Start Your Journey</h1>
+            <p>
+                <span class="line-break">that can change your life</span>
+                Tell us about you and get a personalized plan
+            </p>
+            <a href="/page2" class="btn">Build My Plan</a>
+        </div>
+    </div>
+</body>
+</html>

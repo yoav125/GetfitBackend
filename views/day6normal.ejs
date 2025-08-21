@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1 Meals - GetFit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .menu-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .menu-item h3 {
+            margin-bottom: 10px;
+        }
+
+        .menu-item img {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .menu-item ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .menu-item ul li {
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello, <%= userName %>! Here are your meals for Day 2</h1>
+
+        <!-- Check if there are any meals with quantities -->
+        <% if (mealsWithQuantities && mealsWithQuantities.length > 0) { %>
+
+            <!-- Loop through all the meals dynamically -->
+            <% mealsWithQuantities.forEach((meal, index) => { %>
+                <div class="menu-item">
+                    <h3><%= meal.mealName %></h3>
+                    <!-- Display the corresponding meal image -->
+                    <img src="/photos/<%= mealsWithImages[index] %>" alt="Meal Image <%= index-1  %>">
+                    <p>Ingredients:</p>
+                    <ul>
+                        <!-- Loop through the ingredients for each meal -->
+                        <% Object.keys(meal.ingredientQuantities).forEach(ingredient => { %>
+                            <li><%= meal.ingredientQuantities[ingredient] %> grams of <%= ingredient %></li>
+                        <% }) %>
+                    </ul>
+                </div>
+            <% }) %>
+
+        <% } else { %>
+            <p>No meals found for Day 6. Please check back later or try again.</p>
+        <% } %>
+    </div>
+</body>
+</html>

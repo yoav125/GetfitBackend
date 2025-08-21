@@ -1,0 +1,340 @@
+const mongoose = require('mongoose');
+const Meal = require('./models/meals');
+const Ingredient = require('./models/ingredients');
+
+// Connect to MongoDB
+const dbUri = 'mongodb+srv://NewUser:Fitness22@cluster0.god6zpw.mongodb.net/';
+mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connected to the database'))
+  .catch((err) => console.log('Database connection error:', err));
+
+async function createMeals() {
+  try {
+    // Find ingredient IDs by name
+    const ingredients = await Ingredient.find({});
+
+    const getIngredientByName = (name) => {
+      const ingredient = ingredients.find(i => i.name === name);
+      if (!ingredient) {
+        console.error(`Ingredient ${name} not found in the database.`);
+        throw new Error(`Ingredient ${name} not found in the database.`);
+      }
+      return ingredient;
+    };
+
+    // Define all your meals with their corresponding ingredients and the day parameter
+    const meals = [
+      // Normal Day 1
+      {
+        name: 'Roasted Turkey Breast with Wild Rice and Grilled Asparagus',
+        type: 'normal',
+        day: 1,
+        ingredients: [
+          { ingredientId: getIngredientByName('Wild Rice')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Turkey Breast')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Grilled Asparagus')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Baked Cod with Lemon Herb Crust, Sweet Potatoes & Spinach',
+        type: 'normal',
+        day: 1,
+        ingredients: [
+          { ingredientId: getIngredientByName('Sweet Potatoes')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Baked Cod')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Spinach')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Grilled Flank Steak with Chimichurri Sauce & Quinoa Pilaf',
+        type: 'normal',
+        day: 1,
+        ingredients: [
+          { ingredientId: getIngredientByName('Quinoa')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Flank Steak')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Pan-Seared Salmon with Wild Rice & Kale',
+        type: 'normal',
+        day: 1,
+        ingredients: [
+          { ingredientId: getIngredientByName('Wild Rice')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Salmon')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Kale')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Roasted Pork Tenderloin with Mustard Glaze & Mashed Potatoes',
+        type: 'normal',
+        day: 1,
+        ingredients: [
+          { ingredientId: getIngredientByName('Mashed Potatoes')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Pork Tenderloin')._id, amountInGrams: null }
+        ]
+      },
+
+      // Normal Day 2
+      {
+        name: 'Turkey Burger with Avocado, Lettuce & Tomato on Whole Wheat Bun',
+        type: 'normal',
+        day: 2,
+        ingredients: [
+          { ingredientId: getIngredientByName('Whole Wheat Bun')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Turkey Breast')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Lettuce')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Tomato')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Grilled Salmon with Sweet Potato Mash & Green Beans',
+        type: 'normal',
+        day: 2,
+        ingredients: [
+          { ingredientId: getIngredientByName('Sweet Potatoes')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Grilled Salmon')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Green Beans')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Grilled Chicken Breast with Quinoa Salad & Steamed Broccoli',
+        type: 'normal',
+        day: 2,
+        ingredients: [
+          { ingredientId: getIngredientByName('Quinoa')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Chicken Breast')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Broccoli')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Grilled Lamb Chops with Mint Sauce & Couscous Salad',
+        type: 'normal',
+        day: 2,
+        ingredients: [
+          { ingredientId: getIngredientByName('Couscous')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Lamb Chops')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Roasted Chicken with Roasted Vegetables & Mashed Potatoes',
+        type: 'normal',
+        day: 2,
+        ingredients: [
+          { ingredientId: getIngredientByName('Mashed Potatoes')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Roasted Chicken')._id, amountInGrams: null }
+        ]
+      },
+
+      // Vegetarian Day 1
+      {
+        name: 'Spinach and Goat Cheese Stuffed Portobello Mushroom with Herbed Couscous',
+        type: 'vegetarian',
+        day: 1,
+        ingredients: [
+          { ingredientId: getIngredientByName('Spinach')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Goat Cheese')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Portobello Mushroom')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Eggplant Parmesan with Spaghetti in Marinara Sauce',
+        type: 'vegetarian',
+        day: 1,
+        ingredients: [
+          { ingredientId: getIngredientByName('Spaghetti')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Eggplant')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Parmesan')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Risotto with Shaved Parmesan',
+        type: 'vegetarian',
+        day: 1,
+        ingredients: [
+          { ingredientId: getIngredientByName('Risotto')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Parmesan')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Grilled Halloumi Cheese with Mixed Bean Salad',
+        type: 'vegetarian',
+        day: 1,
+        ingredients: [
+          { ingredientId: getIngredientByName('Mixed Beans')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Halloumi Cheese')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Roasted Vegetable Frittata with Bell Peppers & Zucchini',
+        type: 'vegetarian',
+        day: 1,
+        ingredients: [
+          { ingredientId: getIngredientByName('Bell Peppers')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Zucchini')._id, amountInGrams: null }
+        ]
+      },
+
+      // Vegetarian Day 2
+      {
+        name: 'Quinoa Stuffed Bell Pepper with Black Beans & Corn',
+        type: 'vegetarian',
+        day: 2,
+        ingredients: [
+          { ingredientId: getIngredientByName('Quinoa')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Black Beans')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Corn')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Vegetable Lasagna with Zucchini, Ricotta Cheese & Marinara Sauce',
+        type: 'vegetarian',
+        day: 2,
+        ingredients: [
+          { ingredientId: getIngredientByName('Lasagna Noodles')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Zucchini')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Ricotta Cheese')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Mediterranean Platter with Hummus, Falafel, Tabbouleh & Pita Bread',
+        type: 'vegetarian',
+        day: 2,
+        ingredients: [
+          { ingredientId: getIngredientByName('Pita Bread')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Falafel')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Stuffed Bell Peppers with Lentils & Rice',
+        type: 'vegetarian',
+        day: 2,
+        ingredients: [
+          { ingredientId: getIngredientByName('Lentils')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Rice')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Roasted Vegetable Stir-Fry with Brown Rice & Tofu',
+        type: 'vegetarian',
+        day: 2,
+        ingredients: [
+          { ingredientId: getIngredientByName('Brown Rice')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Tofu')._id, amountInGrams: null }
+        ]
+      },
+
+      // Vegan Day 1
+      {
+        name: 'Lentil and Vegetable Stew with Sweet Potatoes, Carrots, and Kale',
+        type: 'vegan',
+        day: 1,
+        ingredients: [
+          { ingredientId: getIngredientByName('Lentils')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Sweet Potatoes')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Kale')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Quinoa and Black Bean Salad with Avocado & Lime Dressing',
+        type: 'vegan',
+        day: 1,
+        ingredients: [
+          { ingredientId: getIngredientByName('Quinoa')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Black Beans')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Avocado')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Tofu Stir-Fry with Broccoli, Bell Peppers, and Carrots',
+        type: 'vegan',
+        day: 1,
+        ingredients: [
+          { ingredientId: getIngredientByName('Tofu')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Broccoli')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Bell Peppers')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Chickpea & Vegetable Stir-Fry with Spices',
+        type: 'vegan',
+        day: 1,
+        ingredients: [
+          { ingredientId: getIngredientByName('Chickpeas')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Mixed Vegetables')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Butternut Squash Risotto with Sage and Pine Nuts',
+        type: 'vegan',
+        day: 1,
+        ingredients: [
+          { ingredientId: getIngredientByName('Butternut Squash')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Pine Nuts')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Sage')._id, amountInGrams: null }
+        ]
+      },
+
+      // Vegan Day 2
+      {
+        name: 'Vegan Sushi Platter with Avocado & Cucumber Rolls',
+        type: 'vegan',
+        day: 2,
+        ingredients: [
+          { ingredientId: getIngredientByName('Rice')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Avocado')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Cucumber')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Grilled Tofu Salad with Mixed Greens & Cherry Tomatoes',
+        type: 'vegan',
+        day: 2,
+        ingredients: [
+          { ingredientId: getIngredientByName('Tofu')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Mixed Greens')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Cherry Tomatoes')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Stir-Fried Tempeh with Snap Peas & Red Bell Peppers',
+        type: 'vegan',
+        day: 2,
+        ingredients: [
+          { ingredientId: getIngredientByName('Tempeh')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Snap Peas')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Red Bell Peppers')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Grilled Tofu with Quinoa Salad & Steamed Broccoli',
+        type: 'vegan',
+        day: 2,
+        ingredients: [
+          { ingredientId: getIngredientByName('Tofu')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Quinoa')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Broccoli')._id, amountInGrams: null }
+        ]
+      },
+      {
+        name: 'Chickpea & Vegetable Stir-Fry with Spices',
+        type: 'vegan',
+        day: 2,
+        ingredients: [
+          { ingredientId: getIngredientByName('Chickpeas')._id, amountInGrams: null },
+          { ingredientId: getIngredientByName('Mixed Vegetables')._id, amountInGrams: null }
+        ]
+      }
+    ];
+    console.log(meals); // Add this before Meal.insertMany()
+
+    await Meal.insertMany(meals);
+    console.log('Meals saved:', savedMeals);
+    console.log('Meals added successfully');
+    mongoose.connection.close();
+  } catch (err) {
+    console.error('Error creating meals:', err);
+    mongoose.connection.close();
+  }
+}
+
+createMeals();

@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GetFit - Preferences</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    background-image: url('/erasebg-transformed (30).png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 20px 0;
+  }
+  .container {
+    width: 90%;
+    max-width: 700px;
+    background-color: rgba(255,255,255,0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 20px auto;
+  }
+  h1 { text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #333; }
+  .preferences-section { margin-bottom: 30px; }
+  .preferences-section h2 { font-size: 1.8rem; margin-bottom: 10px; color: #333; }
+  .checkbox-group { display: flex; flex-direction: column; }
+  .checkbox-group label { font-size: 1.1rem; margin: 5px 0; color: #333; }
+  .checkbox-group input { margin-right: 10px; }
+  .btn {
+    background-color: #1e90ff; color: white; padding: 15px 30px;
+    font-size: 1.1rem; border-radius: 5px; width: 100%; max-width: 300px;
+    margin: 20px auto 0; text-align: center; border: none; cursor: pointer;
+  }
+  .btn:hover { background-color: #4682b4; }
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <h1>Choose Your Preferences</h1>
+    <form action="/submit-preferences" method="POST">
+
+      <div class="preferences-section">
+        <h2>Proteins</h2>
+        <div class="checkbox-group">
+ 
+          <label><input type="radio" name="protein" value="Eggs"> Eggs</label>
+      
+    
+          <label><input type="radio" name="protein" value="Fish"> Fish</label>
+      
+ 
+
+          <label><input type="radio" name="protein" value="Chicken Breast"> Chicken Breast</label>
+
+          <label><input type="radio" name="protein" value="Turkey Breast"> Turkey Breast</label>
+    
+          <label><input type="radio" name="protein" value="Meat"> Meat</label>
+      
+          <label><input type="radio" name="protein" value="Cheese">Cheese</label>
+        <label><input type="radio" name="protein" value="Tofu">Tofu</label>
+   
+                  <label><input type="radio" name="protein" value="Greek Yogurt">Greek Yogurt</label>
+                          <label><input type="radio" name="protein" value="Shrimp">Shrimp</label>
+        </div>
+      </div>
+
+      <div class="preferences-section">
+        <h2>Carbohydrates</h2>
+        <div class="checkbox-group">
+       
+        
+      
+     
+          <label><input type="radio" name="carbo" value="Fruit"> Fruit</label>
+       
+          <label><input type="radio" name="carbo" value="Rice"> Rice</label>
+          <label><input type="radio" name="carbo" value="Potatoes"> Potatoes</label>
+      
+          <label><input type="radio" name="carbo" value="Couscous"> Couscous</label>
+          <label><input type="radio" name="carbo" value="Quinoa"> Quinoa</label>
+          <label><input type="radio" name="carbo" value="Bread"> Bread</label>
+                  <label><input type="radio" name="carbo" value="Tortilla"> Tortilla</label>
+         <label><input type="radio" name="carbo" value="Pasta"> Pasta</label>
+       
+
+        </div>
+      </div>
+
+      <button type="submit" class="btn">Submit Preferences</button>
+    </form>
+  </div>
+</body>

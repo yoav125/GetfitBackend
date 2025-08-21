@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Nutrition Plan - GetFit</title>
+  <style>
+       body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+    header {
+      background: linear-gradient(to right, #56ab2f, #a8e063);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 2.5em;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .top-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .top-nav li {
+      display: inline;
+    }
+
+    .top-nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      transition: color 0.3s ease;
+    }
+
+    .top-nav a:hover {
+      color: #ffde59;
+    }
+
+    #container {
+      width: 70%;
+      margin: 50px auto;
+      padding: 40px;
+      background-color: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #3498db;
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #27ae60;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+    }
+
+    .custom-image {
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(136, 77, 165, 0.1);
+      margin-bottom: 10px;
+    }
+
+    .btn-checkout {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn-checkout:hover {
+      background-color: #2980b9;
+    }
+
+    footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-nav {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .footer-nav li {
+            display: inline;
+        }
+
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: #ffde59;
+        }
+        .footer-text {
+            font-size: 0.9em;
+            color: white;
+        }
+    .hero {
+            text-align: center;
+            padding: 20px 20px;
+        }
+        
+        .hero img {
+            width: 225px;
+            height: auto;
+            border-radius: 15px;
+            border: 5px solid #fff;
+        }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">GetFit</div>
+    <nav class="top-nav">
+      <ul>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/sales">Home</a></li>
+        <li><a href="/information2">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="hero">
+    <img src="DALL·E 2024-08-27 21.43.09 - Fitnessguy.webp" alt="Fitness Guy" >
+  </div>
+  <div id="container">
+    <div id="protein-list">
+      <h2>Protein List:</h2>
+      <ul>
+        <li>
+          <img src="meat-2879151_1280-fotor-bg-remover-20240812162315.png" alt="Meat" class="custom-image">
+          <p>Lean Meat : <%= weight + 20 %> grams</p>
+        </li>
+        <li>
+          <img src="fresh-meat-fotor-bg-remover-20240821164733.png" alt ="Sirloin" class="custom-image">
+          <p>sirloin</p>
+        </li>
+        <li>
+          <img src="ai-generated-8006209_1280-fotor-bg-remover-20240820182227.png" alt="Filet Mignon" class="custom-image">
+          <p>Filet Mignon</p>
+        </li>
+        <li>
+          <img src="DALL·E 2025-03-04 20.46.01 - shaitel.webp" alt="Shaitel" class="custom-image">
+          <p>Shaitel</p>
+        </li>
+        <li>
+          <img src="chicken-breast-279849_1280-fotor-bg-remover-202408131933.png" alt="Chicken" class="custom-image">
+          <p>Chicken Breast: <%= weight + 20 %> grams</p>
+        </li>
+        <li>
+          <img src="tuna-3886014_1280-fotor-bg-remover-20240812162922.png" alt="Tuna" class="custom-image">
+          <p>Tuna</p>
+        </li>
+        <li>
+        <img src="tilapia-raw (1)-fotor-bg-remover-20240821162533.png" alt="Tilapia" class="custom-image">
+        <p>tilapia</p>
+        </li>
+        <li>
+          <img src="eggs-2048476_1280-fotor-bg-remover-20240812162552.png" alt="Eggs" class="custom-image">
+          <p>5 Eggs with only one (yellow) yolk!</p>
+        </li>
+        <li>
+          <img src="cheese-5179968_1280.jpg" alt="Cheese" class="custom-image">
+          <p>Mozarella chesse</p>
+        </li>
+        <li>
+        <img src="DALL·E 2025-03-04 20.13.10 - Ricotta.webp" alt="Cheese" class="custom-image">
+        <p>Ricotta Chesse: <%= weight + 90 %> grams</p>
+      </li>
+    <li>
+    <img src="DALL·E 2025-03-04 20.13.12 - cottage.webp" alt="Cheese" class="custom-image">
+    <p>Cottage chesse: <%= weight + 90 %> grams</p>
+  </li>
+  <li>
+    <img src="DALL·E 2025-03-04 20.13.26 - fetta.webp" alt="Cheese" class="custom-image">
+    <p>Fetta chesse: <%= weight + 90 %> grams</p>
+  </li>
+  <li>
+    <img src="DALL·E 2025-03-04 20.13.15 - quark.webp" alt="Cheese" class="custom-image">
+    <p>Quark chesse: <%= weight + 90 %> grams</p>
+  </li>
+
+  <li>
+    <img src="DALL·E 2025-03-04 22.00.35 - VanillaFlavour.webp"  alt="Vanilla"  class="custom-image">
+    <p>vanila flavour   <%=weight   + 90 %> grams</p>
+  </li>
+  <li>
+    <img src="DALL·E 2025-03-04 22.00.37 - chocolateProteinPudin.webp"
+     alt="Chocolate puddin" class="custom-image">
+    <p>Chocolate puddin: <%= weight + 90 %> grams</p>
+  </li>
+  <li>
+    <img src="DALL·E 2025-03-04 22.00.40 - CoffeePudin.webp"
+     alt="CoffeePudin"  class="custom-image">
+    <p> Coffee Pudin:   <  %= weight + 90 %> grams</p>
+  </li>
+      </ul>
+    </div>
+
+    <div id="carb-list">
+      <h2>Carb List:</h2>
+      <ul>
+        <li>
+          <img src="closeup-orange.jpg" alt="Orange" class="custom-image">
+          <p>Orange</p>
+        </li>
+        <li>
+          <img src="apple-1702316_1280-fotor-bg-remover-2024081319429.png" alt="Apple" class="custom-image">
+          <p>Apple (1 unit)</p>
+        </li>
+        <li>
+          <img src="pear-2280_1280.jpg" alt="Pear" class="custom-image">
+          <p>Pear</p>
+        </li>
+        <li>
+          <img src="peach.png" alt="Peach" class="custom-image">
+          <p>Peach</p>
+        </li>
+        <li>
+          <img src="perssimon.png" alt="Persimmon" class="custom-image">
+          <p>Persimmon</p>
+        </li>
+        <li>
+          <img src="bananas-1642706_1280-fotor-bg-remover-2024081319858.png" alt="Banana" class="custom-image">
+          <p>Banana</p>
+        </li>
+        <li>
+          <img src="watermelon-1846051_1280-fotor-bg-remover-20240812162514.png" alt="Watermelon" class="custom-image">
+          <p>Watermelon</p>
+        </li>
+        <li>
+          <img src="melon-1239303_1280.jpg" alt="Melon" class="custom-image">
+          <p>Melon</p>
+        </li>
+        <li>
+          <img src="strawberry-1238295_1280.jpg" alt="Strawberry" class="custom-image">
+          <p>Strawberry</p>
+        </li>
+        <li>
+          <img src="rice-3506194_1280-fotor-bg-remover-20240814145750.png" alt="Rice" class="custom-image">
+          <p>Rice: Specify grams</p>
+        </li>
+        <li>
+          <img src="potatoes-2795_1280.jpg" alt="Potato" class="custom-image">
+          <p>Potato: <%= weight + 20 %> grams</p>
+        </li>
+        <li>
+          <img src="sweet-1807_640.jpg" alt="Sweet Potato" class="custom-image">
+          <p>Sweet Potato: <%= weight + 20 %> grams</p>
+        </li>
+        <li>
+          <img src="close-up-view-raw-noodles-concept-fotor-bg-remover-20240821153625.png" alt="Pasta" class="custom-image">
+          <p>Pasta: <%= weight + 20 %> grams</p>
+        </li>
+        <li>
+          <img src="light bread.png" alt="Light Bread" class="custom-image">
+          <p>2 Slices Light Bread</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  
+  <footer>
+    <p class="footer-text">© 2024 GetFit. All rights reserved.</p>
+    <ul class="footer-nav">
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms of Service</a></li>
+    </ul>
+  </footer>
+  <script>
+    // Example using fetch API for checkout
+    document.querySelector('.btn-checkout').addEventListener('click', () => {
+      fetch('/checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          items: [
+            { id: 1, quantity: 2 },
+            // Add more items if needed
+          ],
+        }),
+      })
+        .then(response => response.json())
+        .then(data => {
+          // Redirect to the provided URL after checkout
+          console.log(data);
+          window.location.href = data.url;
+        })
+        .catch(error => console.error('Error:', error));
+    });
+  </script>
+</body>
+
+</html>

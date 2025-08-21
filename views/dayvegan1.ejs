@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1 Vegan Meals - GetFit</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #56ab2f, #a8e063);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .menu-item img {
+            width: 250px;
+        }
+
+        .menu-item h3 {
+            margin: 15px 0;
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        .menu-item p {
+            color: #666;
+            font-size: 1em;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">GetFit</div>
+    </header>
+
+    <div class="container">
+        <div class="menu-item">
+            <img src="photos/DALL·E 2024-08-26 14.07.20 - vegan1.webp" alt="Lentil and Vegetable Stew">
+            <h3>Lentil and Vegetable Stew with Sweet Potatoes, Carrots, and Kale</h3>
+            <p>Ingredients:
+                <ul>
+                    <li><%= (totalCarbs / 5).toFixed(2) %> grams of lentils (Carbs & Protein)</li>
+                    <li><%= (totalCarbs / 5).toFixed(2) %> grams of sweet potatoes (Carbs)</li>
+                    <li>100 grams of carrots and kale</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="menu-item">
+            <img src="photos/DALL·E 2024-08-26 14.07.50 - vegan2.webp" alt="Quinoa and Black Bean Salad">
+            <h3>Quinoa and Black Bean Salad with Avocado & Lime Dressing</h3>
+            <p>Ingredients:
+                <ul>
+                    <li><%= (totalCarbs / 5).toFixed(2) %> grams of quinoa (Carbs)</li>
+                    <li><%= (totalProtein / 5).toFixed(2) %> grams of black beans (Protein)</li>
+                    <li>100 grams of avocado and tomatoes</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="menu-item">
+            <img src="photos/DALL·E 2024-08-26 14.07.52 - vegan3.webp" alt="Tofu Stir-Fry">
+            <h3>Tofu Stir-Fry with Broccoli, Bell Peppers, and Carrots</h3>
+            <p>Ingredients:
+                <ul>
+                    <li><%= (totalCarbs / 5).toFixed(2) %> grams of tofu (Protein)</li>
+                    <li>100 grams of broccoli, bell peppers, and carrots</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="menu-item">
+            <img src="photos/DALL·E 2024-08-26 14.08.04 - vegan4.webp" alt="Roasted Chickpeas with Cauliflower Rice">
+            <h3>Roasted Chickpeas with Turmeric Cauliflower Rice</h3>
+            <p>Ingredients:
+                <ul>
+                    <li><%= (totalCarbs / 5).toFixed(2) %> grams of chickpeas (Protein)</li>
+                    <li>100 grams of turmeric cauliflower rice</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="menu-item">
+            <img src="photos/DALL·E 2024-08-26 14.08.06 - vegan5.webp" alt="Grilled Portobello Mushrooms">
+            <h3>Grilled Portobello Mushrooms with Balsamic Glaze & Arugula Salad</h3>
+            <p>Ingredients:
+                <ul>
+                    <li><%= (totalProtein / 5).toFixed(2) %> grams of grilled portobello mushrooms (Protein)</li>
+                    <li>100 grams of arugula salad</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

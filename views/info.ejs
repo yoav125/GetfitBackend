@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetFit Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Light gray background */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .brand {
+            flex: 1;
+            text-align: left;
+        }
+        .brand h1 {
+            font-size: 50px;
+            color: #28a745; /* Green color for the GetFit brand */
+        }
+        .brand p {
+            font-size: 24px;
+            color: #333;
+        }
+        .login-form {
+            flex: 1;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-form h2 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .login-form input, .login-form select {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box; /* Ensures all elements are sized consistently */
+        }
+        .login-form button {
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745; /* Green button color */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background-color: #218838;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+            width: 100%;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Brand Section -->
+        <div class="brand">
+            <h1>GetFit</h1>
+            <p>Your journey to a healthier life starts here.</p>
+        </div>
+
+        <!-- Login Form Section -->
+        <div class="login-form">
+            <h2>Login to GetFit</h2>
+            <form>
+                <input type="text" placeholder="Enter your name" required>
+                <input type="number" placeholder="Enter your age" min="1" max="120" required>
+                <input type="number" placeholder="Enter your weight (kg)" min="30" max="150" required>
+                <select required>
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 GetFit. All rights reserved.</p>
+    </div>
+
+</body>
+</html>

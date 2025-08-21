@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 1 Meals</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #f8f9fa; }
+    .container { width: 90%; margin: auto; padding: 20px; }
+    .menu-item { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 20px; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    img { max-width: 400px; border-radius: 12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hello, <%= userName %>! Here are your meals for Day 1</h1>
+
+    <% mealsWithQuantities.forEach(meal => { %>
+      <div class="menu-item">
+        <h3><%= meal.mealName %></h3>
+
+        <% if (meal.image) { %>
+          <img src="/photos/<%= meal.image %>" alt="Meal Image">
+        <% } %>
+
+        <ul>
+          <% Object.entries(meal.ingredientQuantities).forEach(([ingredient, grams]) => { %>
+            <li><%= grams %> grams of <%= ingredient %></li>
+          <% }) %>
+        </ul>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>

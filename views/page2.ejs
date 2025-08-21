@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GetFit Transformation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      background: url("/erasebg-transformed (21).png") no-repeat center top;
+      background-position-y: 0%;
+      background-size: cover;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0);
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .text-content {
+      z-index: 1;
+      margin-top: 50px;
+      padding: 20px;
+    }
+
+    .text-content p {
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .text-content h1 {
+      color: white;
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .button-wrapper {
+      z-index: 1;
+      margin-bottom: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .button-wrapper button {
+      background-color: #2ca6ff;
+      color: white;
+      padding: 16px 40px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      width: 80%;
+      max-width: 400px;
+      margin-left: 50px;
+    }
+
+    .button-wrapper button:hover {
+      background-color: #1785cc;
+    }
+
+    @media (max-width: 768px) {
+      .text-content h1 {
+        font-size: 3rem;
+      }
+
+      .button-wrapper button {
+        font-size: 1.1rem;
+        padding: 14px 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .text-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .button-wrapper button {
+        font-size: 1rem;
+        padding: 14px 30px;
+      }
+    }
+  </style>
+
+  <script>
+    function goToPage3() {
+      window.location.href = "/page3";
+    }
+  </script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="overlay"></div>
+
+    <div class="text-content">
+      <p>chosen by</p>
+      <h1>THOUSANDS OF PEOPLE</h1>
+    </div>
+
+    <div class="button-wrapper">
+      <button onclick="goToPage3()">Continue</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!-- views/about.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - GetFit</title>
+    <style>
+        /* Basic CSS for styling the About Us page */
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #56ab2f, #a8e063);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-nav {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .footer-nav li {
+            display: inline;
+        }
+
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: #ffde59;
+        }
+        .footer-text {
+            font-size: 0.9em;
+            color: white;
+        }
+      
+        .top-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+          
+        .top-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <!-- Header Section with Logo and Back Arrow -->
+    <header>
+       <!-- Arrow moved to the top left -->
+        
+    
+            <div class="logo">GetFit</div>
+            <nav class="top-nav">
+                <ul>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/sales">Home</a></li>
+                    <li><a href="/information2">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+    <!-- About Us Content -->
+    <div class="container">
+        <h1>About GetFit</h1>
+        <p>At GetFit, we believe that healthy eating should be accessible to everyone. We understand that many people struggle with eating correctly due to busy schedules, lack of knowledge, or limited access to nutritious foods. That's why we are here – to simplify the process and help you make healthier choices effortlessly.</p>
+        
+        <h2>Our Mission</h2>
+        <p>Our mission is to empower individuals to lead healthier lives by providing personalized daily meal plans that are easy to follow, delicious, and tailored to each person's unique needs and preferences. We aim to remove the barriers to healthy eating by offering a convenient solution for those who find it challenging to plan, prepare, or even think about what to eat every day.</p>
+
+        <h2>How We Help</h2>
+        <p>We create customized meal plans based on your age, weight, dietary preferences, and fitness goals. Our team of nutritionists and culinary experts designs each plan to ensure it is not only nutritionally balanced but also enjoyable and easy to prepare. With GetFit, you can focus on living your life while we take care of your dietary needs.</p>
+
+        <h2>Why Choose GetFit?</h2>
+        <p>We are committed to making healthy eating simple and accessible for everyone. Whether you are looking to lose weight, gain muscle, or maintain a balanced diet, our plans are designed to help you achieve your goals without the stress of meal planning. Let us guide you on your journey to a healthier lifestyle.</p>
+    </div>
+
+    <!-- Footer Section with Consistent Navigation -->
+    <footer>
+        <p class="footer-text">© 2024 GetFit. All rights reserved.</p>
+        <ul class="footer-nav">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
