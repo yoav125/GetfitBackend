@@ -1,9 +1,11 @@
 {
-  "name": "crash-course",
+  "name": "getfit-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "buffer.js",
+  "description": "Backend for GetFit app using Node.js, Express, and MongoDB",
+  "main": "app2.js",
   "scripts": {
+    "start": "node app2.js",
+    "dev": "nodemon app2.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -17,8 +19,10 @@
     "express-session": "^1.18.0",
     "lodash": "^4.17.21",
     "mongoose": "^7.6.8",
-    "mongose": "^0.0.2-security",
     "morgan": "^1.10.0",
     "stripe": "^14.14.0"
+  },
+  "engines": {
+    "node": ">=18.x"
   }
 }

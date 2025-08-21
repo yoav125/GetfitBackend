@@ -16,11 +16,20 @@ const Meal = require('./models/meal');
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY);
 const Preference = require('./models/preference');
 const app = express();
-const dbUri = 'mongodb+srv://NewUser:Fitness22@cluster0.god6zpw.mongodb.net/';
 
+// Use Render’s assigned port or fallback to 3001 locally
+const PORT = process.env.PORT || 3001;
+
+// Use environment variable for MongoDB connection (important for security)
+const dbUri = process.env.MONGODB_URI || 'mongodb+srv://NewUser:Fitness22@cluster0.god6zpw.mongodb.net/';
+
+// Connect to MongoDB
 mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => app.listen(3001, () => console.log('Server running on port 3001')))
-  .catch((err) => console.log('Database connection error:', err));
+  .then(() => {
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  })
+  .catch((err) => console.error('Database connection error:', err));
+
 
 app.use('/photos', express.static('views/photos'));
 app.use(express.urlencoded({ extended: true }));
