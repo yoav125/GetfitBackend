@@ -228,6 +228,16 @@ app.post('/submit-preferences', async (req, res) => {
 });
 
 
+// app.js
+// In your server file (e.g., app.js or index.js)
+app.use(express.json());
+
+// Simple logger endpoint
+app.post("/log", (req, res) => {
+  console.log("📩 Remote Log:", req.body);  // <-- this will show up in Render logs
+  res.json({ success: true });
+});
+
 
 
 
